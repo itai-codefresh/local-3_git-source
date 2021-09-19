@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: cron
+  name: cron-1
 spec:
   eventBusName: codefresh-eventbus
   template:
