@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: cron-1
+  name: cron
 spec:
   eventBusName: codefresh-eventbus
   template:
@@ -13,7 +13,7 @@ spec:
   triggers:
     - template:
         name: hello-world
-        k8s:
+        argoWorkflow:
           group: argoproj.io
           version: v1alpha1
           resource: workflows
