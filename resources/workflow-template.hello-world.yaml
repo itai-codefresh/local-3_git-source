@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: hello-world
+spec:
+  arguments:
+    parameters:
+    - name: message
+  entrypoint: whalesay
+  serviceAccountName: codefresh-sa
+  podGC:
+    strategy: OnWorkflowCompletion
+  templates:
+    - name: whalesay
+      inputs:
+        parameters:
+          - name: message
+            value: hello world # default value
+      container:
+        image: docker/whalesay:latest
+        command: [ cowsay ]
+        args: [ "{{inputs.parameters.message}}" ]
