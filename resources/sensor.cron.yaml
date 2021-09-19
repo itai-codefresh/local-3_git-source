@@ -12,7 +12,7 @@ spec:
       eventName: example-with-interval
   triggers:
     - template:
-        name: calendar-workflow-trigger
+        name: hello-world
         k8s:
           group: argoproj.io
           version: v1alpha1
