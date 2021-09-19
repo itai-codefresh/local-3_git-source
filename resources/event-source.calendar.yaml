@@ -7,4 +7,4 @@ spec:
   calendar:
     example-with-interval:
       # creates an event every 5 minutes
-      interval: 2m
+      interval: 5m
